@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es_ES">
+<head>
+    <style type="text/css">
+    body {
+        color: purple;
+        background-color: #d8da3d;
+    }
+
+    #seccion1 {
+        font-size: 60px;
+        text-align: center;
+        background-image: url(https://cdn.pixabay.com/photo/2021/02/27/01/06/noelle-6053517_960_720.png);
+        background-size: contain;
+    }
+    
+    .proyecto img {
+        width: 50%;
+    }
+
+    #proyectos {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="seccion1">
+        <h1>Bienvenido!</h1>
+    </section>
+    <section id="proyectos"></section>
+
+</body>
+
+<script>
+
+    const datos = [{
+        img: 'https://cdn.donmai.us/original/62/69/__eula_genshin_impact_drawn_by_nextoad__626911373473debca38f6754801c8493.png',
+        desc: 'Eula'
+    },
+        {
+            img: 'https://cdn.donmai.us/sample/b4/6b/__sucrose_genshin_impact_drawn_by_meda__sample-b46bfb54e0f8b2d26bd2d2af31e2dac8.jpg',
+            desc: 'Sucrose'
+        },
+        {
+            img: 'https://cdn.donmai.us/sample/41/c4/__amber_genshin_impact_drawn_by_kein_hasegawa__sample-41c4722ca45517a9a94239bbc39dd941.jpg',
+            desc: 'Amber'
+        },
+
+        {
+            img: 'https://cdn.donmai.us/sample/3e/c9/__lisa_genshin_impact_drawn_by_archstreal__sample-3ec92723fb963ec6f55f654f806d4cf8.jpg',
+            desc: 'Lisa'
+
+    }]
+
+    console.log("Hello World");
+    let proyectos = document.querySelector('#proyectos');
+    console.log("proyectos");
+    proyectos.style.background = 'red';
+    proyectos.style.color = 'white';
+
+    function dinamico(src,desc) {
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        img.src = src;
+        let p = document.createElement("p");
+        p.innerHTML = desc;
+        div.appendChild(img);
+        div.appendChild(p);
+        proyectos.appendChild(div);
+    }
+
+    datos.forEach(({img,desc}) => dinamico (img,desc));
+    
+</script>
+
+</html>
